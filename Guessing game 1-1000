@@ -1,0 +1,36 @@
+import random
+
+def newRandomNumber():
+    randomNum = random.randint(1, 1000)
+    return randomNum
+
+def myGame(n):
+    try:
+        number = int(input("Pick a number from 1-1000\n"))
+        if number not in range(1, 1001):
+            print("That number is not in range....\n")
+            myGame(n)
+        elif number == n:
+            print("You chose the correct number!")
+        elif number > n:
+            print("Guess too high")
+            myGame(n)
+        #elif number etc......
+        elif number < n:
+            print("Guess too low")
+            myGame(n)
+        #elif number etc......
+    except ValueError:
+        print("Must input integer!")
+        myGame(n)
+##myGame()       WHEN REPLAY LOOP DID NOT EXIST, THIS TO RUN THE FUNCTION
+replay = True
+while replay:
+    a = newRandomNumber()
+    print(a)
+    myGame(a)
+    playagain = input("Do you want to play again? y/n\n")
+    if playagain.upper() == "YES" or playagain.upper() == "Y":
+        replay = True
+    else:
+        replay = False
