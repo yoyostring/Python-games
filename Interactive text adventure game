@@ -1,0 +1,44 @@
+###INTERACTIVE TEXT ADVENTURE GAME
+import random
+import time
+
+def pathways(path):
+    if path == 'homeless':
+        print("You are sleeping on a bench, near the dumpster")
+    elif path == 'kid':
+        print("You are in a house")
+    elif path == 'criminal':
+        print("You just robbed a jewelry store")
+    return path
+
+def myGame():
+    username = input("Hi what's your name?\n")
+    print("Hi " + username)
+    time.sleep(1)
+    
+    while input("Please type 'go' to begin your adventure\n") != "go":
+        time.sleep(1)
+        
+    print("Below will show you the paths you can take on your journey")
+    time.sleep(2)
+    
+    path = input("Choose a path, homeless | kid | criminal\n")
+    if path == 'homeless':
+        pathways('homeless')
+    elif path == 'kid':
+        pathways('kid')
+    elif path == 'criminal':
+        pathways('criminal')
+    else:
+        print("You must choose path 'homeless', 'kid' or 'criminal'")
+
+goodGame = True
+while(goodGame):
+    myGame()
+    playagain = input("Do you want to play again? y/n\n")
+    #if (playagain.upper() != "YES" and playagain.upper() != "Y"):
+    #    goodGame = False
+    if (playagain.upper() == "YES" or playagain.upper() == "Y"):
+        goodGame = True
+    else:
+        goodGame = False
