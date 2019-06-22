@@ -27,7 +27,7 @@ def myGame(n):
 replay = True
 while replay:
     a = newRandomNumber()
-    print(a)
+    #print(a)
     myGame(a)
     playagain = input("Do you want to play again? y/n\n")
     if playagain.upper() == "YES" or playagain.upper() == "Y":
